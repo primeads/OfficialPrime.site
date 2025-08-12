@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo-Ads</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
+            color: white;
+        }
+
+        /* Smooth transitions */
+        * {
+            transition: all 0.3s ease;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .new-community {
+            background: #00aaff;
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00aaff;
+        }
+
+        /* CTA Button in Nav */
+        .cta {
+            background: white;
+            color: black;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        /* Buttons container */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* All buttons */
+        button, .cta {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        button:hover, .cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+        }
+
+        /* Press animation */
+        button:active, .cta:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+        }
+
+        /* Primary button */
+        .btn-primary {
+            background: #00aaff;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background: #008ecc;
+        }
+
+        /* Secondary button */
+        .btn-secondary {
+            background: white;
+            color: black;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            Prime-Ads <span class="new-community">[NEW COMMUNITY]</span>
+        </div>
+
+        <nav>
+            <a href="#">Products</a>
+            <a href="#">Solutions</a>
+            <a href="#">Why Echo-Ads</a>
+            <a href="#">Learn</a>
+            <a href="#">Pricing</a>
+        </nav>
+
+        <a href="#" class="cta">Get a demo</a>
+    </header>
+
+    <section class="hero">
+        <h1>Cheapest Advertising Community.</h1>
+        <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
+        
+        <div class="hero-buttons">
+            <button class="btn-primary">Sign Up</button>
+            <button class="btn-secondary">Login</button>
+        </div>
+    </section>
+
+</body>
+</html>
