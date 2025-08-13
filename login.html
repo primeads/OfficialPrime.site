@@ -77,17 +77,18 @@
       transform: scale(0.98);
     }
 
+    /* Centered Back Link with middle-expanding underline */
     .back-link {
-    display: inline-block;
-    text-align: center;
-    margin-top: 15px;
-    color: #00aaff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    position: relative;
-    padding-bottom: 3px;
-  } 
-  
+      display: block; /* Makes the link take full width */
+      text-align: center; /* Centers the text */
+      margin-top: 15px;
+      color: #00aaff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
     .back-link::after {
       content: "";
       position: absolute;
@@ -99,16 +100,14 @@
       transform: translateX(-50%);
       transition: width 0.3s ease;
     }
-    
+
     .back-link:hover::after {
       width: 100%;
     }
-    
+
     .back-link:hover {
       color: #00c3ff; /* Slightly brighter hover color */
     }
-
-
   </style>
 </head>
 <body>
