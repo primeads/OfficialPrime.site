@@ -23,10 +23,10 @@
       max-width: 400px;
       width: 100%;
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
       margin-bottom: 20px;
       color: #00aaff;
     }
@@ -35,6 +35,7 @@
       display: block;
       margin: 10px 0 5px;
       font-weight: bold;
+      text-align: left;
     }
 
     input[type="text"],
@@ -54,6 +55,14 @@
       color: #ccc;
     }
 
+    /* Button animation styles */
+    button, .cta, .btn-primary, .btn-secondary, input[type="submit"] {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
     input[type="submit"] {
       width: 100%;
       padding: 12px;
@@ -61,31 +70,29 @@
       background: #00aaff;
       color: white;
       font-weight: bold;
-      border: none;
       border-radius: 5px;
       font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.15s ease;
     }
 
     input[type="submit"]:hover {
       background: #008ecc;
-      transform: scale(1.02);
+      transform: scale(1.05);
+      box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
     }
 
     input[type="submit"]:active {
-      transform: scale(0.98);
+      transform: scale(0.95);
+      box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
     }
 
-    /* Centered Back Link with middle-expanding underline */
+    /* Back link centered underline animation */
     .back-link {
-      display: block; /* Makes the link take full width */
-      text-align: center; /* Centers the text */
-      margin-top: 15px;
+      display: inline-block;
+      position: relative;
+      margin: 15px auto 0;
       color: #00aaff;
       text-decoration: none;
       font-size: 0.9rem;
-      position: relative;
       padding-bottom: 3px;
     }
 
@@ -106,7 +113,7 @@
     }
 
     .back-link:hover {
-      color: #00c3ff; /* Slightly brighter hover color */
+      color: #00c3ff;
     }
   </style>
 </head>
