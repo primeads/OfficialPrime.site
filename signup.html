@@ -40,16 +40,21 @@
 
     input[type="text"],
     input[type="password"],
+
     input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    background: linear-gradient(135deg, rgba(0,43,107,0.6), rgba(0,0,0,0.6));
-    color: white;
-    font-size: 1rem;
-    font-family: Arial, sans-serif; /* same as your login page */
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      background: rgba(0, 0, 0, 0.5); /* solid dark background */
+      color: white;
+      font-size: 1rem;
+      font-family: Arial, sans-serif; /* matches login page */
+    }
+    
+    input[type="date"]::placeholder {
+      color: #ccc;
     }
     
     /* Button animation styles */
