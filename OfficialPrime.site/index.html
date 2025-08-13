@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prime-Ads</title>
+<style>
+  /* Reset & Base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Smooth transitions */
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+  }
+  .logo { font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; }
+  .badge {
+    background: #00aaff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
+  nav { flex-grow: 1; display: flex; justify-content: center; gap: 30px; }
+  nav ul { list-style: none; display: flex; gap: 30px; }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  nav a:hover { color: #00aaff; }
+
+  /* Buttons - shared animation styles */
+  button, .cta, .btn-primary, .btn-secondary {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  button:hover, .cta:hover, .btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+  }
+  button:active, .cta:active, .btn-primary:active, .btn-secondary:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+  }
+
+  /* Button variants */
+  .btn-primary {
+    background: #00aaff;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .btn-primary:hover { background: #008ecc; }
+
+  .btn-secondary {
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .btn-secondary:hover { background: #f0f0f0; }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+  .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; color: #ccc; }
+  .buttons { display: flex; justify-content: center; gap: 15px; }
+
+  /* Fade-in animation */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Stats */
+  .stats {
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .stats h2 { font-size: 2rem; margin-bottom: 2rem; }
+  .stat-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .stat { font-size: 2.5rem; font-weight: bold; color: #00aaff; }
+  .stat-label { font-size: 1rem; color: #ccc; }
+  .cta-text { font-size: 1.5rem; font-weight: 600; margin-top: 1rem; }
+
+  /* Why Section */
+  .why {
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 2rem;
+    color: #ddd;
+  }
+  .why h2 { font-size: 2rem; margin-bottom: 1rem; color: #fff; }
+  .why p { font-size: 1.1rem; line-height: 1.6; }
+
+  /* Products */
+  .products-section { padding: 4rem 2rem; text-align: center; }
+  .products-section h2 { font-size: 2rem; margin-bottom: 3rem; }
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .product-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+  .product-price { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+  .product-name { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .product-discount { font-size: 0.85rem; color: #ccc; }
+  .strike { text-decoration: line-through; font-size: 0.75rem; color: red; display: inline-block; transform: rotate(3deg); }
+  .cooldown { font-size: 0.85rem; margin-top: 0.3rem; }
+  .white-text { color: white; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Prime-Ads <span class="badge">NEW COMMUNITY</span></div>
+  <nav>
+    <ul>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Why Prime-Ads</a></li>
+      <li><a href="#">Learn</a></li>
+      <li><a href="#">Pricing</a></li>
+    </ul>
+  </nav>
+  <button class="demo-button">Get a demo</button>
+</header>
+
+<section class="hero">
+        <h1>Cheapest Advertising Community.</h1>
+        <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
+        
+        <div class="hero-buttons">
+            <a href="signup.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center;">
+                Sign Up
+            </a>
+            <a href="login.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center;">
+                Login
+            </a>
+        </div>
+</section>
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="auth.js"></script>
+
+<section class="stats fade-in-section" id="stats">
+  <h2>Our Track Record</h2>
+  <div class="stat-grid">
+    <div>
+      <div class="stat" data-target="0" id="vouches">0</div>
+      <div class="stat-label">Vouches</div>
+    </div>
+    <div>
+      <div class="stat" data-target="0" id="clients">0</div>
+      <div class="stat-label">Clients Served</div>
+    </div>
+  </div>
+  <div class="cta-text">Be our first clients!</div>
+</section>
+
+<section class="why fade-in-section">
+  <h2>Why Prime-Ads?</h2>
+  <p>
+    Prime-Ads offers one of the most cost-effective advertising solutions available today. 
+    We save our clients both time and money by handling all aspects of their promotional needs, 
+    from high-quality graphic designs to professional video advertisements. 
+    Whether you’re a small business or a growing brand, our streamlined services ensure your message 
+    reaches the right audience without breaking your budget. 
+    With Prime-Ads, you get creativity, efficiency, and affordability—all in one place.
+  </p>
+</section>
+
+<section class="products-section fade-in-section" id="products">
+  <h2>Our Products</h2>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-price">$2.99</div>
+      <div class="product-name">Graphic Design Advertisement</div>
+      <div class="product-discount">With Subscription: $1.50</div>
+    </div>
+    <div class="product-card">
+      <div class="product-price">$14.99</div>
+      <div class="product-name">Video Advertisement</div>
+      <div class="product-discount">With Subscription: $7.50</div>
+    </div>
+    <div class="product-card">
+      <div class="product-price">$24.99</div>
+      <div class="product-name">Subscription</div>
+      <div class="cooldown"><span class="strike">30 minutes advertisement cooldown</span></div>
+      <div class="cooldown white-text">10 minutes advertisement cooldown.</div>
+      <div class="product-discount white-text">50% Discount on all of our products!</div>
+    </div>
+    <div class="product-card">
+      <div class="product-price">Free Advertisement!</div>
+      <div class="product-name">Watch Ad</div>
+      <div class="cooldown" id="free-timer">Free in 1:00:00</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Fade-in observer
+  const faders = document.querySelectorAll('.fade-in-section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('visible', entry.isIntersecting);
+    });
+  }, {threshold: 0.2});
+  faders.forEach(fader => observer.observe(fader));
+
+  // Animate counters
+  const statsSection = document.getElementById('stats');
+  const statNumbers = document.querySelectorAll('.stat');
+  let started = false;
+  function animateStats() {
+    if (started) return;
+    if (statsSection.classList.contains('visible')) {
+      started = true;
+      statNumbers.forEach(stat => {
+        const target = +stat.getAttribute('data-target');
+        let count = 0;
+        const updateCount = () => {
+          const increment = (target) / 200;
+          if (count < target) {
+            count += increment;
+            stat.textContent = Math.floor(count);
+            requestAnimationFrame(updateCount);
+          } else {
+            stat.textContent = target;
+          }
+        };
+        updateCount();
+      });
+    }
+  }
+  observer.observe(statsSection);
+  statsSection.addEventListener('transitionend', animateStats);
+
+  // Free Ad countdown
+  let timeLeft = 3600; // 1 hour in seconds
+  const freeTimer = document.getElementById('free-timer');
+  setInterval(() => {
+    if (timeLeft > 0) {
+      timeLeft--;
+      let h = String(Math.floor(timeLeft / 3600)).padStart(1, '0');
+      let m = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, '0');
+      let s = String(timeLeft % 60).padStart(2, '0');
+      freeTimer.textContent = `Free in ${h}:${m}:${s}`;
+    } else {
+      freeTimer.textContent = "Free Now!";
+    }
+  }, 1000);
+</script>
+</body>
+</html>
