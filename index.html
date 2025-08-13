@@ -1,97 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prime-Ads</title>
-<style>
-  * {margin:0;padding:0;box-sizing:border-box;transition: all 0.3s ease;}
-  html {scroll-behavior: smooth;}
-  body {
-    font-family: Arial, sans-serif;
-    color: white;
-    background: radial-gradient(circle at top left, black 25%, transparent 75%),
-                radial-gradient(circle at center, #0a2c66 50%, transparent 90%),
-                radial-gradient(circle at bottom right, black 25%, transparent 75%);
-    background-color: #001f3f;
-    background-size: cover;
-    background-attachment: fixed;
-    overflow-x: hidden;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo-Ads</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
+            color: white;
+        }
 
-  /* Header */
-  header {
-    display:flex;align-items:center;justify-content:space-between;
-    padding:1rem 3rem;background:transparent;position:sticky;top:0;z-index:100;
-  }
-  .logo {font-weight:bold;font-size:1.5rem;display:flex;align-items:center;gap:0.5rem;}
-  .badge, .new-community {
-    background:#00aaff;color:#fff;font-weight:600;
-    font-size:0.75rem;padding:0.15rem 0.5rem;border-radius:3px;
-  }
-  nav {flex-grow:1;display:flex;justify-content:center;}
-  nav ul {list-style:none;display:flex;gap:2rem;}
-  nav a {
-    color:#fff;text-decoration:none;font-weight:500;transition:color 0.3s;
-  }
-  nav a:hover {color:#00aaff;}
-  .cta, .demo-button {
-    background:#fff;color:#000;padding:0.5rem 1.2rem;border-radius:6px;font-weight:600;
-    cursor:pointer;border:none;text-decoration:none;text-align:center;display:inline-block;
-  }
-  .cta:hover, .demo-button:hover {background:#ddd;}
-  
-  /* Hero Section */
-  .hero {
-    min-height:100vh;display:flex;flex-direction:column;
-    justify-content:center;text-align:center;padding:2rem;max-width:700px;margin:0 auto;
-  }
-  .hero h1 {font-size:3rem;font-weight:700;margin-bottom:1rem;}
-  .hero p {font-size:1.25rem;margin-bottom:2rem;color:#ccc;}
-  .hero-buttons {display:flex;justify-content:center;gap:1rem;}
-  .btn-primary, .btn-secondary {
-    padding:0.75rem 2rem;border-radius:6px;font-size:1.1rem;font-weight:600;
-    border:none;cursor:pointer;transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  }
-  .btn-primary {background:#00aaff;color:#fff;}
-  .btn-primary:hover {background:#008ecc;transform:scale(1.05);box-shadow:0 5px 15px rgba(0,170,255,0.4);}
-  .btn-primary:active {transform:scale(0.95);box-shadow:0 2px 8px rgba(0,170,255,0.2);}
-  .btn-secondary {background:#fff;color:#000;}
-  .btn-secondary:hover {background:#eee;transform:scale(1.05);}
-  .btn-secondary:active {transform:scale(0.95);}
-  
-  /* Fade-in sections */
-  .fade-in-section {opacity:0;transform:translateX(-50px);transition:opacity 0.8s ease, transform 0.8s ease;}
-  .fade-in-section.visible {opacity:1;transform:translateX(0);}
-</style>
+        /* Smooth transitions */
+        * {
+            transition: all 0.3s ease;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .new-community {
+            background: #00aaff;
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+
+        nav {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00aaff;
+        }
+
+        /* CTA Button in Nav */
+        .cta {
+            background: white;
+            color: black;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        /* Buttons container */
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* All buttons */
+        button, .cta {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+
+        button:hover, .cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+        }
+
+        /* Press animation */
+        button:active, .cta:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+        }
+
+        /* All clickable elements with button style */
+        button, .cta, .btn-primary, .btn-secondary {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+        
+        /* Hover animation */
+        button:hover, .cta:hover, .btn-primary:hover, .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+        }
+        
+        /* Press animation */
+        button:active, .cta:active, .btn-primary:active, .btn-secondary:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+        }
+
+        /* Primary button */
+        .btn-primary {
+            background: #00aaff;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background: #008ecc;
+        }
+
+        /* Secondary button */
+        .btn-secondary {
+            background: white;
+            color: black;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn-secondary:hover {
+            background: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">
-    Prime-Ads <span class="new-community">[NEW COMMUNITY]</span>
-  </div>
-  <nav>
-    <a href="signup.html">Products</a>
-    <a href="#">Solutions</a>
-    <a href="#">Why Prime-Ads</a>
-    <a href="#">Learn</a>
-    <a href="#">Pricing</a>
-  </nav>
-  <a href="#" class="cta">Get a demo</a>
-</header>
+    <header>
+        <div class="logo">
+            Prime-Ads <span class="new-community">[NEW COMMUNITY]</span>
+        </div>
 
-<section class="hero">
-  <h1>Cheapest Advertising Community.</h1>
-  <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
-  
-  <div class="hero-buttons">
-    <a href="signup.html" class="btn-primary">Sign Up</a>
-    <a href="login.html" class="btn-primary">Login</a>
-  </div>
-</section>
+        <nav>
+            <a href="signup.html">Products</a>
+            <a href="#">Solutions</a>
+            <a href="#">Why Prime-Ads</a>
+            <a href="#">Learn</a>
+            <a href="#">Pricing</a>
+        </nav>
 
-<script type="module" src="firebase-config.js"></script>
-<script type="module" src="auth.js"></script>
+        <a href="#" class="cta">Get a demo</a>
+    </header>
+
+    <section class="hero">
+        <h1>Cheapest Advertising Community.</h1>
+        <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
+        
+        <div class="hero-buttons">
+            <a href="signup.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center;">
+                Sign Up
+            </a>
+            <a href="login.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center;">
+                Login
+            </a>
+        </div>
+    </section>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="auth.js"></script>
 </body>
 </html>
