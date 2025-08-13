@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Prime-Ads</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #00aaff;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      color: #ccc;
+    }
+
+    /* Button animation styles */
+    button, .cta, .btn-primary, .btn-secondary, input[type="submit"] {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #00aaff;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    input[type="submit"]:hover {
+      background: #008ecc;
+      transform: scale(1.05);
+      box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+    }
+
+    input[type="submit"]:active {
+      transform: scale(0.95);
+      box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+    }
+
+    /* Back link centered underline animation */
+    .back-link {
+      display: inline-block;
+      position: relative;
+      margin: 15px auto 0;
+      color: #00aaff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding-bottom: 3px;
+    }
+
+    .back-link::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: #00aaff;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+
+    .back-link:hover::after {
+      width: 100%;
+    }
+
+    .back-link:hover {
+      color: #00c3ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-container">
+    <h1>Sign Up</h1>
+    <form action="signup-handler.php" method="post">
+      <label>First Name:</label>
+      <input type="text" name="firstName" placeholder="Enter first name" required>
+
+      <label>Last Name:</label>
+      <input type="text" name="lastName" placeholder="Enter last name" required>
+
+      <label>Date of Birth:</label>
+      <input type="date" name="dob" required>
+
+      <label>Username:</label>
+      <input type="text" name="username" placeholder="Enter username" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" placeholder="Enter password" required>
+
+      <input type="submit" value="Sign Up">
+    </form>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+</body>
+</html>
