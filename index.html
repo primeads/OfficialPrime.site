@@ -112,6 +112,26 @@
             box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
         }
 
+        /* All clickable elements with button style */
+        button, .cta, .btn-primary, .btn-secondary {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+        }
+        
+        /* Hover animation */
+        button:hover, .cta:hover, .btn-primary:hover, .btn-secondary:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+        }
+        
+        /* Press animation */
+        button:active, .cta:active, .btn-primary:active, .btn-secondary:active {
+            transform: scale(0.95);
+            box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+        }
+
         /* Primary button */
         .btn-primary {
             background: #00aaff;
