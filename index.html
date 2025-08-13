@@ -5,58 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Prime-Ads</title>
 <style>
-  * {margin:0;padding:0;box-sizing:border-box}
-  html {scroll-behavior: smooth;}
+  /* Reset & Base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Smooth transitions */
+  }
+  html { scroll-behavior: smooth; }
   body {
     font-family: Arial, sans-serif;
     color: white;
-    background: radial-gradient(circle at top left, black 25%, transparent 75%),
-                radial-gradient(circle at center, #0a2c66 50%, transparent 90%),
-                radial-gradient(circle at bottom right, black 25%, transparent 75%);
-    background-color: #001f3f;
+    background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
     background-size: cover;
     background-attachment: fixed;
     overflow-x: hidden;
   }
+
+  /* Header */
   header {
-    display:flex;align-items:center;justify-content:space-between;
-    padding:1rem 3rem;background:transparent;position:sticky;top:0;z-index:100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
   }
-  .logo {
-    font-weight:bold;font-size:1.3rem;display:flex;align-items:center;gap:0.5rem;
-  }
+  .logo { font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; }
   .badge {
-    background:#00aaff;color:#fff;font-weight:600;
-    font-size:0.75rem;padding:0.15rem 0.5rem;border-radius:3px;
+    background: #00aaff;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
   }
-  nav {flex-grow:1;display:flex;justify-content:center}
-  nav ul {list-style:none;display:flex;gap:2rem}
+  nav { flex-grow: 1; display: flex; justify-content: center; gap: 30px; }
+  nav ul { list-style: none; display: flex; gap: 30px; }
   nav a {
-    color:#fff;text-decoration:none;font-weight:500;transition:color 0.3s;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
   }
-  nav a:hover {color:#00aaff}
-  .demo-button {
-    background:#fff;color:#000;padding:0.5rem 1.2rem;
-    border-radius:6px;font-weight:600;cursor:pointer;border:none;
-    transition:background 0.3s;
+  nav a:hover { color: #00aaff; }
+
+  /* Buttons - shared animation styles */
+  button, .cta, .btn-primary, .btn-secondary {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
-  .demo-button:hover {background:#ddd}
+  button:hover, .cta:hover, .btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+  }
+  button:active, .cta:active, .btn-primary:active, .btn-secondary:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+  }
+
+  /* Button variants */
+  .btn-primary {
+    background: #00aaff;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .btn-primary:hover { background: #008ecc; }
+
+  .btn-secondary {
+    background: white;
+    color: black;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  .btn-secondary:hover { background: #f0f0f0; }
+
+  /* Hero */
   .hero {
-    min-height:100vh;display:flex;flex-direction:column;
-    justify-content:center;text-align:center;
-    padding:2rem;max-width:700px;margin:0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
   }
-  .hero h1 {font-size:3rem;font-weight:700;margin-bottom:1rem}
-  .hero p {font-size:1.25rem;margin-bottom:2.5rem;color:#ccc}
-  .buttons {display:flex;justify-content:center;gap:1rem}
-  .btn-signup, .btn-login {
-    padding:0.75rem 2rem;border-radius:6px;font-size:1.1rem;font-weight:600;
-    border:none;cursor:pointer;transition:background 0.3s;
-  }
-  .btn-signup {background:#00aaff;color:#fff;}
-  .btn-signup:hover {background:#008ecc}
-  .btn-login {background:#fff;color:#000;}
-  .btn-login:hover {background:#eee}
+  .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+  .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; color: #ccc; }
+  .buttons { display: flex; justify-content: center; gap: 15px; }
 
   /* Fade-in animation */
   .fade-in-section {
@@ -69,68 +109,63 @@
     transform: translateX(0);
   }
 
-  /* Stats Section */
+  /* Stats */
   .stats {
-    padding:4rem 2rem;text-align:center;
+    padding: 4rem 2rem;
+    text-align: center;
   }
-  .stats h2 {
-    font-size:2rem;margin-bottom:2rem;
-  }
+  .stats h2 { font-size: 2rem; margin-bottom: 2rem; }
   .stat-grid {
-    display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;margin-bottom:2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
   }
-  .stat {font-size:2.5rem;font-weight:bold;color:#00aaff;}
-  .stat-label {font-size:1rem;color:#ccc;}
-  .cta-text {font-size:1.5rem;font-weight:600;margin-top:1rem;}
+  .stat { font-size: 2.5rem; font-weight: bold; color: #00aaff; }
+  .stat-label { font-size: 1rem; color: #ccc; }
+  .cta-text { font-size: 1.5rem; font-weight: 600; margin-top: 1rem; }
 
   /* Why Section */
   .why {
-    max-width:800px;margin:4rem auto;text-align:center;
-    padding:2rem;color:#ddd;
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 2rem;
+    color: #ddd;
   }
-  .why h2 {font-size:2rem;margin-bottom:1rem;color:#fff;}
-  .why p {font-size:1.1rem;line-height:1.6;}
+  .why h2 { font-size: 2rem; margin-bottom: 1rem; color: #fff; }
+  .why p { font-size: 1.1rem; line-height: 1.6; }
 
   /* Products */
-  .products-section {
-    padding:4rem 2rem;
-    text-align:center;
-  }
-  .products-section h2 {
-    font-size:2rem;margin-bottom:3rem;
-  }
+  .products-section { padding: 4rem 2rem; text-align: center; }
+  .products-section h2 { font-size: 2rem; margin-bottom: 3rem; }
   .product-grid {
-    display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
   }
   .product-card {
-    background:rgba(255,255,255,0.05);
-    border-radius:10px;
-    padding:1.5rem;
-    width:200px;
-    display:flex;flex-direction:column;align-items:center;
-    transition:transform 0.3s, box-shadow 0.3s;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
   .product-card:hover {
-    transform:translateY(-5px);
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   }
-  .product-price {font-size:1.5rem;font-weight:bold;margin-bottom:0.5rem;}
-  .product-name {font-size:1.1rem;margin-bottom:0.5rem;}
-  .product-discount {
-    font-size:0.85rem;color:#ccc;
-  }
-  .strike {
-    text-decoration:line-through;
-    font-size:0.75rem;
-    color:red;
-    display:inline-block;
-    transform:rotate(3deg);
-  }
-  .cooldown {
-    font-size:0.85rem;
-    margin-top:0.3rem;
-  }
-  .white-text {color:white;}
+  .product-price { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
+  .product-name { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .product-discount { font-size: 0.85rem; color: #ccc; }
+  .strike { text-decoration: line-through; font-size: 0.75rem; color: red; display: inline-block; transform: rotate(3deg); }
+  .cooldown { font-size: 0.85rem; margin-top: 0.3rem; }
+  .white-text { color: white; }
 </style>
 </head>
 <body>
@@ -150,13 +185,20 @@
 </header>
 
 <section class="hero">
-  <h1>Cheapest Advertising Community.</h1>
-  <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
-  <div class="buttons">
-    <button class="btn-signup">Sign Up</button>
-    <button class="btn-login">Login</button>
-  </div>
+        <h1>Cheapest Advertising Community.</h1>
+        <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
+        
+        <div class="hero-buttons">
+            <a href="signup.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center;">
+                Sign Up
+            </a>
+            <a href="login.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center;">
+                Login
+            </a>
+        </div>
 </section>
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="auth.js"></script>
 
 <section class="stats fade-in-section" id="stats">
   <h2>Our Track Record</h2>
