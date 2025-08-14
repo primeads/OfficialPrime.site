@@ -9,10 +9,12 @@
     <style>
         /* General Styles */
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
             color: white;
+            background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
+            background-size: cover;
+            background-attachment: fixed;
+            overflow-x: hidden;
         }
 
         /* Smooth transitions */
@@ -28,16 +30,14 @@
             padding: 15px 50px;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
+       .logo { font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; }
+       
         .new-community {
             background: #00aaff;
-            color: white;
-            padding: 3px 8px;
+            color: #fff;
+            font-weight: 600;
             font-size: 0.8rem;
+            padding: 3px 8px;
             border-radius: 4px;
             margin-left: 8px;
         }
@@ -219,5 +219,4 @@
         </div>
     </section>
 </body>
-
 </html>
