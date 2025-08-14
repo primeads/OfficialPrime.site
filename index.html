@@ -22,85 +22,71 @@
     overflow-x: hidden;
   }
 
-  /* Header */
+  /* Top Navigation Bar */
   header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-  }
-  .logo { font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; }
-  .badge {
-    background: #00aaff;
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.8rem;
-    padding: 3px 8px;
-    border-radius: 4px;
-    margin-left: 8px;
-  }
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        }
 
-  nav {
-    list-style: none;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-  }
-  nav a {
-    list-style: none;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  nav a:hover { color: #00aaff; }
+        .logo {
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        }
 
-  .demo-button {
-    background: #fff;
-    color: #000;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    transition: background 0.3s;
-  }
-  .demo-button:hover { background: #ddd; }
-  
-  /* Buttons - shared animation styles */
-  button, .cta, .btn-primary, .btn-secondary {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  }
-  button:hover, .cta:hover, .btn-primary:hover, .btn-secondary:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
-  }
-  button:active, .cta:active, .btn-primary:active, .btn-secondary:active {
-    transform: scale(0.95);
-    box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
-  }
+        .badge {
+        background: #00aaff;
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.8rem;
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-left: 8px;
+        }
 
-  /* Button variants */
-  .btn-primary {
-    background: #00aaff;
-    color: white;
-    padding: 12px 30px;
-    font-size: 1rem;
-    border-radius: 5px;
-  }
-  .btn-primary:hover { background: #008ecc; }
+        nav {
+        display: flex;
+        gap: 50px;
+        }
 
-  .btn-secondary {
-    background: white;
-    color: black;
-    padding: 12px 25px;
-    font-size: 1rem;
-    border-radius: 5px;
-  }
-  .btn-secondary:hover { background: #f0f0f0; }
+        nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        }
+
+        nav a:hover {
+        color: #00aaff;
+        }
+
+        .header-buttons {
+        display: flex;
+        gap: 15px;
+        }
+
+        .btn-primary {
+        background: #00aaff;
+        color: white;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        }
+
+        .btn-secondary {
+        background: white;
+        color: black;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        }
+
+        .btn-primary:hover { background: #008ecc; }
+        .btn-secondary:hover { background: #f0f0f0; }
 
   /* Hero */
   .hero {
@@ -115,12 +101,7 @@
   }
   .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
   .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; color: #ccc; }
-  .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
+  .buttons { display: flex; justify-content: center; gap: 15px; }
 
   /* Fade-in animation */
   .fade-in-section {
@@ -195,16 +176,21 @@
 <body>
 
 <header>
-  <div class="logo">Prime-Ads <span class="badge">NEW COMMUNITY</span></div>
+  <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
+
   <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="#">Solutions</a>
-      <a href="#">Why Prime-Ads</a>
-      <a href="#">Learn</a>
-      <a href="#">Pricing</a>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="#">Solutions</a>
+    <a href="#">Why Prime-Ads</a>
+    <a href="#">Learn</a>
+    <a href="#">Pricing</a>
   </nav>
-  <button class="demo-button">Get a demo</button>
+
+  <div class="header-buttons">
+    <a href="signup.html" class="btn-primary">Sign Up</a>
+    <a href="login.html" class="btn-secondary">Login</a>
+  </div>
 </header>
 
 <section class="hero">
