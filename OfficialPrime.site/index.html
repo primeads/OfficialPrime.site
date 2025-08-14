@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Prime-Ads</title>
+<title>Prime Ads - Home</title>
 <style>
   /* Reset & Base */
   * {
@@ -22,14 +22,21 @@
     overflow-x: hidden;
   }
 
-  /* Header */
+  /* Top Navigation Bar */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
   }
-  .logo { font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; }
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
   .badge {
     background: #00aaff;
     color: #fff;
@@ -39,49 +46,99 @@
     border-radius: 4px;
     margin-left: 8px;
   }
-  nav { flex-grow: 1; display: flex; justify-content: center; gap: 30px; }
-  nav ul { list-style: none; display: flex; gap: 30px; }
+
+  nav {
+    display: flex;
+    gap: 50px;
+  }
+
   nav a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-weight: 500;
   }
-  nav a:hover { color: #00aaff; }
 
-  /* Buttons - shared animation styles */
-  button, .cta, .btn-primary, .btn-secondary {
+  nav a:hover {
+    color: #00aaff;
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .btn-primary:hover { background: #008ecc; }
+  .btn-secondary:hover { background: #f0f0f0; }
+
+  /* All buttons */
+  button,
+  .cta,
+  .btn-primary,
+  .btn-secondary {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+
+  /* All buttons */
+  button,
+  .cta,
+  .btn-primary,
+  .btn-secondary {
     cursor: pointer;
     border: none;
     outline: none;
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
-  button:hover, .cta:hover, .btn-primary:hover, .btn-secondary:hover {
+
+  /* Hover animation */
+  button:hover,
+  .cta:hover,
+  .btn-primary:hover,
+ .btn-secondary:hover {
     transform: scale(1.05);
     box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
   }
-  button:active, .cta:active, .btn-primary:active, .btn-secondary:active {
-    transform: scale(0.95);
-    box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+
+  /* Press animation */
+  button:active,
+  .cta:active,
+  .btn-primary:active,
+  .btn-secondary:active {
+      transform: scale(0.95);
+      box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
   }
 
-  /* Button variants */
+  /* Primary button */
   .btn-primary {
     background: #00aaff;
     color: white;
-    padding: 12px 35px;
+    padding: 12px 25px;
     font-size: 1rem;
     border-radius: 5px;
+    text-decoration: none;
+    gap: 15;
   }
-  .btn-primary:hover { background: #008ecc; }
 
+  .btn-primary:hover {
+    background: #008ecc;
+  }
+
+  /* Secondary button */
   .btn-secondary {
     background: white;
     color: black;
     padding: 12px 25px;
     font-size: 1rem;
     border-radius: 5px;
+    text-decoration: none;
+    gap: 15;
   }
-  .btn-secondary:hover { background: #f0f0f0; }
+
+  .btn-secondary:hover {
+      background: #f0f0f0;
+  }
 
   /* Hero */
   .hero {
@@ -171,17 +228,20 @@
 <body>
 
 <header>
-  <div class="logo">Prime-Ads <span class="badge">NEW COMMUNITY</span></div>
+  <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
+
   <nav>
-    <ul>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="#">Solutions</a></li>
-      <li><a href="#">Why Prime-Ads</a></li>
-      <li><a href="#">Learn</a></li>
-      <li><a href="#">Pricing</a></li>
-    </ul>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="#">Solutions</a>
+    <a href="#">Why Prime-Ads</a>
+    <a href="#">Learn</a>
+    <a href="#">Pricing</a>
   </nav>
-  <button class="demo-button">Get a demo</button>
+
+  <div class="header-buttons">
+    <a class="btn-primary">Get a Demo</a>
+  </div>
 </header>
 
 <section class="hero">
@@ -189,13 +249,14 @@
         <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
         
         <div class="hero-buttons">
-            <a href="signup.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center;">
-                Sign Up
-            </a>
-            <a href="login.html" class="btn-primary" style="display:inline-block; text-decoration:none; text-align:center;">
-                Login
-            </a>
-        </div>
+    <a href="signup.html" class="btn-primary" style="margin-right: 10px; display:inline-block; text-decoration:none; text-align:center;">
+        Sign Up
+    </a>
+    <a href="login.html" class="btn-secondary" style="display:inline-block; text-decoration:none; text-align:center;">
+        Login
+    </a>
+</div>
+
 </section>
 <script type="module" src="firebase-config.js"></script>
 <script type="module" src="auth.js"></script>
