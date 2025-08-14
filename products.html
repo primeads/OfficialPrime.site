@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="style.css"> <!-- Your existing style -->
+    <link rel="stylesheet" href="style.css"> <!-- Same CSS as main page -->
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Same Header/Nav as index.html -->
     <header>
         <div class="logo">My Store</div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
+            <a href="products.html" class="active">Products</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <a href="login.html" class="cta">Login</a>
+        <div class="hero-buttons">
+            <a href="signup.html" class="btn-primary">Sign Up</a>
+            <a href="login.html" class="btn-secondary">Login</a>
+        </div>
     </header>
 
-    <!-- Products Section -->
+    <!-- Middle Section: Product Grid -->
     <section class="products-section">
         <h1>Our Products</h1>
         <div class="products-grid">
@@ -44,5 +47,10 @@
             </div>
         </div>
     </section>
+
+    <!-- Same Footer as index.html -->
+    <footer>
+        <p>&copy; 2025 My Store. All rights reserved.</p>
+    </footer>
 </body>
 </html>
