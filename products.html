@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Prime Ads - Products</title>
 
     <style>
         /* General Styles */
+
         body {
             font-family: Arial, sans-serif;
             color: white;
@@ -24,49 +25,69 @@
 
         /* Top Navigation Bar */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
         }
 
-       .logo { font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; }
-       
-        .new-community {
-            background: #00aaff;
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.8rem;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-left: 8px;
+        .logo {
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        }
+
+        .badge {
+        background: #00aaff;
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.8rem;
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-left: 8px;
         }
 
         nav {
-            list-style: none;
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            gap: 50px;
+        display: flex;
+        gap: 50px;
         }
 
         nav a {
-            list-style: none;
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
         }
 
         nav a:hover {
-            color: #00aaff;
+        color: #00aaff;
         }
 
-        /* Buttons Container in Header */
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
+        .header-buttons {
+        display: flex;
+        gap: 15px;
         }
+
+        .btn-primary {
+        background: #00aaff;
+        color: white;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        }
+
+        .btn-secondary {
+        background: white;
+        color: black;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        }
+
+        .btn-primary:hover { background: #008ecc; }
+        .btn-secondary:hover { background: #f0f0f0; }
 
         /* All buttons */
         button,
@@ -169,9 +190,7 @@
 <body>
     <!-- Top Navigation -->
     <header>
-        <div class="logo">
-            Prime Ads<span class="new-community">NEW COMMUNITY</span>
-        </div>
+        <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
 
         <nav>
             <a href="index.html">Home</a>
@@ -182,11 +201,12 @@
             <a href="#">Pricing</a>
         </nav>
 
-        <div class="hero-buttons">
+        <div class="header-buttons">
             <a href="signup.html" class="btn-primary">Sign Up</a>
             <a href="login.html" class="btn-secondary">Login</a>
         </div>
     </header>
+
 
     <!-- Products Section -->
     <section class="products">
@@ -219,4 +239,5 @@
         </div>
     </section>
 </body>
+
 </html>
