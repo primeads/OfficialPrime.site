@@ -8,6 +8,12 @@
 
     <style>
         /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease; /* Smooth transitions */
+        }
 
         body {
             font-family: Arial, sans-serif;
@@ -25,10 +31,10 @@
 
         /* Top Navigation Bar */
         header {
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+            height: 80px; /* fixed your missing px unit */
+            display: flex;
+            align-items: center;
+            padding: 15px 50px;
         }
 
         .logo {
@@ -48,9 +54,16 @@
         margin-left: 8px;
         }
 
+        .nav-center {
+            flex: 1; /* takes up all available space between left and right */
+            display: flex;
+            justify-content: center; /* centers nav links horizontally */
+        }
+
         nav {
-        display: flex;
-        gap: 50px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
         }
 
         nav a {
@@ -64,8 +77,8 @@
         }
 
         .header-buttons {
-        display: flex;
-        gap: 15px;
+            display: flex;
+            gap: 15px;
         }
 
         .btn-primary {
@@ -193,22 +206,23 @@
     <header>
         <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="#">Solutions</a>
-            <a href="#">Why Prime-Ads</a>
-            <a href="#">Learn</a>
-            <a href="#">Pricing</a>
-        </nav>
+        <div class="nav-center">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="#">Solutions</a>
+                <a href="#">Why Prime-Ads</a>
+                <a href="#">Learn</a>
+                <a href="#">Pricing</a>
+            </nav>
+        </div>
 
         <div class="header-buttons">
             <a href="signup.html" class="btn-primary">Sign Up</a>
             <a href="login.html" class="btn-secondary">Login</a>
         </div>
     </header>
-
-
+    
     <!-- Products Section -->
     <section class="products">
         <div class="product-card">

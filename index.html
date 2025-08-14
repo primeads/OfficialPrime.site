@@ -24,11 +24,11 @@
 
   /* Top Navigation Bar */
   header {
+    height: 80px; /* fixed your missing px unit */
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-  }
+}
 
   .logo {
     font-weight: bold;
@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
   }
-
+  
   .badge {
     background: #00aaff;
     color: #fff;
@@ -47,9 +47,16 @@
     margin-left: 8px;
   }
 
+  .nav-center {
+      flex: 1; /* takes up all available space between left and right */
+      display: flex;
+      justify-content: center; /* centers nav links horizontally */
+  }
+
   nav {
-    display: flex;
-    gap: 50px;
+      display: flex;
+      gap: 50px;
+      align-items: center;
   }
 
   nav a {
@@ -63,8 +70,8 @@
   }
 
   .header-buttons {
-    display: flex;
-    gap: 15px;
+      display: flex;
+      gap: 15px;
   }
 
   .btn-primary:hover { background: #008ecc; }
@@ -228,20 +235,22 @@
 <body>
 
 <header>
-  <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
+        <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="#">Solutions</a>
-    <a href="#">Why Prime-Ads</a>
-    <a href="#">Learn</a>
-    <a href="#">Pricing</a>
-  </nav>
+        <div class="nav-center">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="#">Solutions</a>
+                <a href="#">Why Prime-Ads</a>
+                <a href="#">Learn</a>
+                <a href="#">Pricing</a>
+            </nav>
+        </div>
 
-  <div class="header-buttons">
-    <a class="btn-primary">Get a Demo</a>
-  </div>
+      <div class="header-buttons">
+        <a class="btn-primary">Get a Demo</a>
+      </div>
 </header>
 
 <section class="hero">
