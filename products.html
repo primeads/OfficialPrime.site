@@ -2,257 +2,269 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Prime Ads - Products</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Ads - Products</title>
 
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: all 0.3s ease; /* Smooth transitions */
-        }
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            color: white;
-            background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
-            background-size: cover;
-            background-attachment: fixed;
-            overflow-x: hidden;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      background: radial-gradient(circle at center, #002b6b 0%, #000000 80%);
+      background-size: cover;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
 
-        /* Smooth transitions */
-        * {
-            transition: all 0.3s ease;
-        }
+    header {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      padding: 15px 50px;
+    }
 
-        /* Top Navigation Bar */
-        header {
-            height: 80px; /* fixed your missing px unit */
-            display: flex;
-            align-items: center;
-            padding: 15px 50px;
-        }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
 
-        .logo {
-        font-weight: bold;
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        }
+    .badge {
+      background: #00aaff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
 
-        .badge {
-        background: #00aaff;
-        color: #fff;
-        font-weight: 600;
-        font-size: 0.8rem;
-        padding: 3px 8px;
-        border-radius: 4px;
-        margin-left: 8px;
-        }
+    .nav-center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
 
-        .nav-center {
-            flex: 1; /* takes up all available space between left and right */
-            display: flex;
-            justify-content: center; /* centers nav links horizontally */
-        }
+    nav {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+    }
 
-        nav {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        }
+    nav a:hover {
+      color: #00aaff;
+    }
 
-        nav a:hover {
-        color: #00aaff;
-        }
+    .header-buttons {
+      display: flex;
+      gap: 15px;
+    }
 
-        .header-buttons {
-            display: flex;
-            gap: 15px;
-        }
+    .btn-primary {
+      background: #00aaff;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+    }
 
-        .btn-primary {
-        background: #00aaff;
-        color: white;
-        padding: 12px 25px;
-        font-size: 1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        }
+    .btn-secondary {
+      background: white;
+      color: black;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+    }
 
-        .btn-secondary {
-        background: white;
-        color: black;
-        padding: 12px 25px;
-        font-size: 1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        }
+    .btn-primary:hover {
+      background: #008ecc;
+    }
 
-        .btn-primary:hover { background: #008ecc; }
-        .btn-secondary:hover { background: #f0f0f0; }
+    .btn-secondary:hover {
+      background: #f0f0f0;
+    }
 
-        /* All buttons */
-        button,
-        .cta,
-        .btn-primary,
-        .btn-secondary {
-            cursor: pointer;
-            border: none;
-            outline: none;
-            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-        }
+    button,
+    .cta,
+    .btn-primary,
+    .btn-secondary {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
 
-        /* Hover animation */
-        button:hover,
-        .cta:hover,
-        .btn-primary:hover,
-        .btn-secondary:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
-        }
+    button:hover,
+    .cta:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+    }
 
-        /* Press animation */
-        button:active,
-        .cta:active,
-        .btn-primary:active,
-        .btn-secondary:active {
-            transform: scale(0.95);
-            box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
-        }
+    button:active,
+    .cta:active,
+    .btn-primary:active,
+    .btn-secondary:active {
+      transform: scale(0.95);
+      box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
+    }
 
-        /* Primary button */
-        .btn-primary {
-            background: #00aaff;
-            color: white;
-            padding: 12px 25px;
-            font-size: 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-        }
+    /* Products Section */
+    .products {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+    }
 
-        .btn-primary:hover {
-            background: #008ecc;
-        }
+    .product-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+    }
 
-        /* Secondary button */
-        .btn-secondary {
-            background: white;
-            color: black;
-            padding: 12px 25px;
-            font-size: 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-        }
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
+    }
 
-        .btn-secondary:hover {
-            background: #f0f0f0;
-        }
+    /* Glow wrapper */
+    .product-thumb {
+      --img-size: 120px;
+      --glow-size: 180px;
 
-        /* Products Section */
-        .products {
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
+      position: relative;
+      width: var(--glow-size);
+      height: var(--glow-size);
+      margin: 12px auto 16px;
+      display: grid;
+      place-items: center;
+    }
 
-        .product-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+    .product-thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+          rgba(0, 140, 255, 0.55) 0%,
+          rgba(0, 140, 255, 0.25) 45%,
+          transparent 70%);
+      filter: blur(18px);
+      z-index: 0;
+    }
 
-        .product-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
-        }
+    .product-thumb img {
+      width: var(--img-size);
+      height: auto;
+      display: block;
+      z-index: 1;
+      border-radius: 6px;
+    }
 
+    .product-card h3 {
+      margin-bottom: 10px;
+    }
 
-        .products img {
-        width: 250px;
-        height: 250px;
-        object-fit: cover;
-        }
-
-        .product-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .product-card p {
-            color: #ccc;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-    </style>
+    .product-card p {
+      color: #ccc;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Top Navigation -->
-    <header>
-        <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
+  <!-- Top Navigation -->
+  <header>
+    <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
 
-        <div class="nav-center">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="#">Solutions</a>
-                <a href="#">Why Prime-Ads</a>
-                <a href="#">Learn</a>
-                <a href="#">Pricing</a>
-            </nav>
-        </div>
+    <div class="nav-center">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="#">Solutions</a>
+        <a href="#">Why Prime-Ads</a>
+        <a href="#">Learn</a>
+        <a href="#">Pricing</a>
+      </nav>
+    </div>
 
-        <div class="header-buttons">
-            <a href="signup.html" class="btn-primary">Sign Up</a>
-            <a href="login.html" class="btn-secondary">Login</a>
-        </div>
-    </header>
-    
-    <!-- Products Section -->
-    <section class="products">
-        <div class="product-card">
-            <img src="https://via.placeholder.com/250" alt="Product 1">
-            <h3>Product 1</h3>
-            <p>Short description of the product.</p>
-            <button class="btn-primary">Buy Now</button>
-        </div>
+    <div class="header-buttons">
+      <a href="signup.html" class="btn-primary">Sign Up</a>
+      <a href="login.html" class="btn-secondary">Login</a>
+    </div>
+  </header>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/250" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>Short description of the product.</p>
-            <button class="btn-primary">Buy Now</button>
-        </div>
+  <!-- Products Section -->
+  <section class="products">
+    <div class="product-card">
+      <div class="product-thumb">
+        <img
+          src="https://img.freepik.com/free-psd/best-e-gaming-games-jam-fest-square-flyer_23-2148584127.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="GFX Advertisement">
+      </div>
+      <h3>GFX Advertisement</h3>
+      <p>Short description of the product.</p>
+      <button class="btn-primary">Buy Now</button>
+    </div>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/250" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Short description of the product.</p>
-            <button class="btn-primary">Buy Now</button>
-        </div>
+    <div class="product-card">
+      <div class="product-thumb">
+        <img
+          src="https://img.freepik.com/free-psd/best-e-gaming-games-jam-fest-square-flyer_23-2148584127.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="Video Advertisement">
+      </div>
+      <h3>Video Advertisement</h3>
+      <p>Short description of the product.</p>
+      <button class="btn-primary">Buy Now</button>
+    </div>
 
-        <div class="product-card">
-            <img src="https://via.placeholder.com/250" alt="Product 4">
-            <h3>Product 4</h3>
-            <p>Short description of the product.</p>
-            <button class="btn-primary">Buy Now</button>
-        </div>
-    </section>
+    <div class="product-card">
+      <div class="product-thumb">
+        <img
+          src="https://img.freepik.com/free-psd/best-e-gaming-games-jam-fest-square-flyer_23-2148584127.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="Subscription">
+      </div>
+      <h3>Subscription</h3>
+      <p>Short description of the product.</p>
+      <button class="btn-primary">Buy Now</button>
+    </div>
+
+    <div class="product-card">
+      <div class="product-thumb">
+        <img
+          src="https://img.freepik.com/free-psd/best-e-gaming-games-jam-fest-square-flyer_23-2148584127.jpg?semt=ais_hybrid&w=740&q=80"
+          alt="Free Advertisement!">
+      </div>
+      <h3>Free Advertisement!</h3>
+      <p>Short description of the product.</p>
+      <button class="btn-primary">Buy Now</button>
+    </div>
+  </section>
 </body>
 
 </html>

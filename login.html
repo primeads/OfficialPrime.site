@@ -16,7 +16,7 @@
       height: 100vh;
     }
 
-    .signup-container {
+    .form-container {
       background: rgba(255, 255, 255, 0.05);
       padding: 40px;
       border-radius: 10px;
@@ -50,19 +50,11 @@
       font-size: 1rem;
     }
 
-    input[type="text"]::placeholder,
-    input[type="password"]::placeholder {
+    input::placeholder {
       color: #ccc;
     }
 
-    /* Button animation styles */
-    button, .cta, .btn-primary, .btn-secondary, input[type="submit"] {
-      cursor: pointer;
-      border: none;
-      outline: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-
+    /* Button styles */
     input[type="submit"] {
       width: 100%;
       padding: 12px;
@@ -72,6 +64,9 @@
       font-weight: bold;
       border-radius: 5px;
       font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
     input[type="submit"]:hover {
@@ -85,7 +80,7 @@
       box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
     }
 
-    /* Back link centered underline animation */
+    /* Back link animation */
     .back-link {
       display: inline-block;
       position: relative;
@@ -119,17 +114,22 @@
 </head>
 <body>
 
-  <div class="signup-container">
+  <div class="form-container">
     <h1>Sign In</h1>
-    <form action="signup-handler.php" method="post">
-      <label>Username:</label>
-      <input type="text" name="username" placeholder="Enter username" required>
+    <form action="index.html" method="post">
+      <label for="username">Username:</label>
+      <input id="username" type="text" name="username" placeholder="Enter username" required>
 
-      <label>Password:</label>
-      <input type="password" name="password" placeholder="Enter password" required>
+      <label for="password">Password:</label>
+      <div style="display: flex; align-items: center;">
+        <input id="password" type="password" name="password" placeholder="Enter password" required>
+        <button type="button" id="togglePassword" style="margin-left: 8px;">👁️</button>
+      </div>
 
-      <input type="submit" value="Sign In">
+      <input type="submit" onclick="return showForm('login')" value="Sign In">
     </form>
+    <script src="forms.js"></script>
+
     <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 

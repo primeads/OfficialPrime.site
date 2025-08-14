@@ -118,27 +118,31 @@
   </style>
 </head>
 <body>
-
   <div class="signup-container">
     <h1>Sign Up</h1>
-    <form action="signup-handler.php" method="post">
-      <label>First Name:</label>
-      <input type="text" name="firstName" placeholder="Enter first name" required>
+    <form action="index.html" method="post">
+      <label for="firstName">First Name:</label>
+      <input id="firstName" type="text" name="firstName" placeholder="Enter first name" required>
 
-      <label>Last Name:</label>
-      <input type="text" name="lastName" placeholder="Enter last name" required>
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" type="text" name="lastName" placeholder="Enter last name" required>
 
-      <label>Date of Birth:</label>
-      <input type="date" name="dob" required>
+      <label for="dob">Date of Birth:</label>
+      <input id="dob" type="date" name="dob" required>
 
-      <label>Username:</label>
-      <input type="text" name="username" placeholder="Enter username" required>
+      <label for="username">Username:</label>
+      <input id="username" type="text" name="username" placeholder="Enter username" required>
 
-      <label>Password:</label>
-      <input type="password" name="password" placeholder="Enter password" required>
+      <label for="password">Password:</label>
+      <div style="display: flex; align-items: center;">
+        <input id="password" type="password" name="password" placeholder="Enter password" required>
+        <button type="button" id="togglePassword" style="margin-left: 8px;">👁️</button>
+      </div>
 
-      <input type="submit" value="Sign Up">
+      <input type="submit" onclick="return showForm('signup')" value="Sign Up">
     </form>
+    <script src="forms.js"></script>
+
     <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 
