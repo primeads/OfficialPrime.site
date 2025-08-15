@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.3s ease; /* Smooth transitions */
+    transition: all 0.3s ease;
   }
   html { scroll-behavior: smooth; }
   body {
@@ -24,19 +24,17 @@
 
   /* Top Navigation Bar */
   header {
-    height: 80px; /* fixed your missing px unit */
+    height: 80px;
     display: flex;
     align-items: center;
     padding: 15px 50px;
-}
-
+  }
   .logo {
     font-weight: bold;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
   }
-  
   .badge {
     background: #00aaff;
     color: #fff;
@@ -46,78 +44,42 @@
     border-radius: 4px;
     margin-left: 8px;
   }
-
   .nav-center {
-      flex: 1; /* takes up all available space between left and right */
+      flex: 1;
       display: flex;
-      justify-content: center; /* centers nav links horizontally */
+      justify-content: center;
   }
-
   nav {
       display: flex;
       gap: 50px;
       align-items: center;
   }
-
   nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
   }
-
-  nav a:hover {
-    color: #00aaff;
-  }
-
+  nav a:hover { color: #00aaff; }
   .header-buttons {
       display: flex;
       gap: 15px;
   }
 
-  .btn-primary:hover { background: #008ecc; }
-  .btn-secondary:hover { background: #f0f0f0; }
-
-  /* All buttons */
-  button,
-  .cta,
-  .btn-primary,
-  .btn-secondary {
+  /* Buttons */
+  button, .cta, .btn-primary, .btn-secondary {
       cursor: pointer;
       border: none;
       outline: none;
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
-
-  /* All buttons */
-  button,
-  .cta,
-  .btn-primary,
-  .btn-secondary {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  button:hover, .cta:hover, .btn-primary:hover, .btn-secondary:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
   }
-
-  /* Hover animation */
-  button:hover,
-  .cta:hover,
-  .btn-primary:hover,
- .btn-secondary:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
-  }
-
-  /* Press animation */
-  button:active,
-  .cta:active,
-  .btn-primary:active,
-  .btn-secondary:active {
+  button:active, .cta:active, .btn-primary:active, .btn-secondary:active {
       transform: scale(0.95);
       box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
   }
-
-  /* Primary button */
   .btn-primary {
     background: #00aaff;
     color: white;
@@ -125,14 +87,8 @@
     font-size: 1rem;
     border-radius: 5px;
     text-decoration: none;
-    gap: 15;
   }
-
-  .btn-primary:hover {
-    background: #008ecc;
-  }
-
-  /* Secondary button */
+  .btn-primary:hover { background: #008ecc; }
   .btn-secondary {
     background: white;
     color: black;
@@ -140,12 +96,8 @@
     font-size: 1rem;
     border-radius: 5px;
     text-decoration: none;
-    gap: 15;
   }
-
-  .btn-secondary:hover {
-      background: #f0f0f0;
-  }
+  .btn-secondary:hover { background: #f0f0f0; }
 
   /* Hero */
   .hero {
@@ -160,7 +112,6 @@
   }
   .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
   .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; color: #ccc; }
-  .buttons { display: flex; justify-content: center; gap: 15px; }
 
   /* Fade-in animation */
   .fade-in-section {
@@ -201,72 +152,72 @@
   .why h2 { font-size: 2rem; margin-bottom: 1rem; color: #fff; }
   .why p { font-size: 1.1rem; line-height: 1.6; }
 
-  /* Products */
-  .products-section { padding: 4rem 2rem; text-align: center; }
-  .products-section h2 { font-size: 2rem; margin-bottom: 3rem; }
-  .product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+  /* Partnerships */
+  .partnerships-section {
+    padding: 4rem 2rem;
+    text-align: center;
   }
-  .product-card {
+  .partnerships-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .partnerships-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+    justify-content: center;
+  }
+  .partnership-card {
+    flex: 0 0 auto;
     background: rgba(255,255,255,0.05);
     border-radius: 10px;
-    padding: 1.5rem;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 1rem;
+    width: 250px;
+    min-height: 150px;
+    text-align: center;
   }
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  .company-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #00aaff;
   }
-  .product-price { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5rem; }
-  .product-name { font-size: 1.1rem; margin-bottom: 0.5rem; }
-  .product-discount { font-size: 0.85rem; color: #ccc; }
-  .strike { text-decoration: line-through; font-size: 0.75rem; color: red; display: inline-block; transform: rotate(3deg); }
-  .cooldown { font-size: 0.85rem; margin-top: 0.3rem; }
-  .white-text { color: white; }
+  .members {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
 </style>
 </head>
 <body>
 
 <header>
-        <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
-
-        <div class="nav-center">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="#">Solutions</a>
-                <a href="#">Why Prime-Ads</a>
-                <a href="#">Learn</a>
-                <a href="#">Pricing</a>
-            </nav>
-        </div>
-
-      <div class="header-buttons">
+    <div class="logo">Prime Ads <span class="badge">NEW COMMUNITY</span></div>
+    <div class="nav-center">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="#">Solutions</a>
+            <a href="#">Why Prime-Ads</a>
+            <a href="#">Learn</a>
+            <a href="#">Pricing</a>
+        </nav>
+    </div>
+    <div class="header-buttons">
         <a class="btn-primary">Get a Demo</a>
-      </div>
+    </div>
 </header>
 
 <section class="hero">
-        <h1>Cheapest Advertising Community.</h1>
-        <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
-        
-        <div class="hero-buttons">
-    <a href="signup.html" class="btn-primary" style="margin-right: 10px; display:inline-block; text-decoration:none; text-align:center;">
-        Sign Up
-    </a>
-    <a href="login.html" class="btn-secondary" style="display:inline-block; text-decoration:none; text-align:center;">
-        Login
-    </a>
-</div>
-
+    <h1>Cheapest Advertising Community.</h1>
+    <p>Smarter advertising starts here. Join our new community and discover innovative ways to grow your reach.</p>
+    <div class="hero-buttons">
+        <a href="signup.html" class="btn-primary" style="margin-right: 10px;">Sign Up</a>
+        <a href="login.html" class="btn-secondary">Login</a>
+    </div>
 </section>
+
 <script type="module" src="firebase-config.js"></script>
 <script type="module" src="auth.js"></script>
 
@@ -297,30 +248,22 @@
   </p>
 </section>
 
-<section class="products-section fade-in-section" id="products">
-  <h2>Our Products</h2>
-  <div class="product-grid">
-    <div class="product-card">
-      <div class="product-price">$2.99</div>
-      <div class="product-name">Graphic Design Advertisement</div>
-      <div class="product-discount">With Subscription: $1.50</div>
+<!-- Partnerships Section -->
+<section class="partnerships-section fade-in-section" id="partnerships">
+  <h2 id="partnerships-title">0 Partnerships</h2>
+  <div class="partnerships-scroll" id="partnerships-list">
+    <!-- Example cards -->
+    <div class="partnership-card">
+      <div class="company-name">Company A</div>
+      <div class="members">John, Sarah, Mike</div>
     </div>
-    <div class="product-card">
-      <div class="product-price">$14.99</div>
-      <div class="product-name">Video Advertisement</div>
-      <div class="product-discount">With Subscription: $7.50</div>
+    <div class="partnership-card">
+      <div class="company-name">Company B</div>
+      <div class="members">Alice, Bob</div>
     </div>
-    <div class="product-card">
-      <div class="product-price">$24.99</div>
-      <div class="product-name">Subscription</div>
-      <div class="cooldown"><span class="strike">30 minutes advertisement cooldown</span></div>
-      <div class="cooldown white-text">10 minutes advertisement cooldown.</div>
-      <div class="product-discount white-text">50% Discount on all of our products!</div>
-    </div>
-    <div class="product-card">
-      <div class="product-price">Free Advertisement!</div>
-      <div class="product-name">Watch Ad</div>
-      <div class="cooldown" id="free-timer">Free in 1:00:00</div>
+    <div class="partnership-card">
+      <div class="company-name">Company C</div>
+      <div class="members">David, Emma, Liam</div>
     </div>
   </div>
 </section>
@@ -347,7 +290,7 @@
         const target = +stat.getAttribute('data-target');
         let count = 0;
         const updateCount = () => {
-          const increment = (target) / 200;
+          const increment = target / 200;
           if (count < target) {
             count += increment;
             stat.textContent = Math.floor(count);
@@ -363,20 +306,11 @@
   observer.observe(statsSection);
   statsSection.addEventListener('transitionend', animateStats);
 
-  // Free Ad countdown
-  let timeLeft = 3600; // 1 hour in seconds
-  const freeTimer = document.getElementById('free-timer');
-  setInterval(() => {
-    if (timeLeft > 0) {
-      timeLeft--;
-      let h = String(Math.floor(timeLeft / 3600)).padStart(1, '0');
-      let m = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, '0');
-      let s = String(timeLeft % 60).padStart(2, '0');
-      freeTimer.textContent = `Free in ${h}:${m}:${s}`;
-    } else {
-      freeTimer.textContent = "Free Now!";
-    }
-  }, 1000);
+  // Partnerships counter
+  const partnershipsList = document.getElementById('partnerships-list');
+  const partnershipsTitle = document.getElementById('partnerships-title');
+  const partnershipsCount = partnershipsList.children.length;
+  partnershipsTitle.textContent = `${partnershipsCount} Partnerships`;
 </script>
 </body>
 </html>

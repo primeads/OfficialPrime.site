@@ -15,7 +15,6 @@
       align-items: center;
       height: 100vh;
     }
-
     .signup-container {
       background: rgba(255, 255, 255, 0.05);
       padding: 40px;
@@ -25,19 +24,13 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       text-align: center;
     }
-
-    h1 {
-      margin-bottom: 20px;
-      color: #00aaff;
-    }
-
+    h1 { margin-bottom: 20px; color: #00aaff; }
     label {
       display: block;
       margin: 10px 0 5px;
       font-weight: bold;
       text-align: left;
     }
-
     input[type="text"],
     input[type="password"],
     input[type="date"] {
@@ -50,19 +43,13 @@
       color: white;
       font-size: 1rem;
     }
-
-    input::placeholder {
-      color: #ccc;
-    }
-
-    /* Button animation styles */
+    input::placeholder { color: #ccc; }
     button, .cta, .btn-primary, .btn-secondary, input[type="submit"] {
       cursor: pointer;
       border: none;
       outline: none;
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
-
     input[type="submit"] {
       width: 100%;
       padding: 12px;
@@ -73,19 +60,15 @@
       border-radius: 5px;
       font-size: 1rem;
     }
-
     input[type="submit"]:hover {
       background: #008ecc;
       transform: scale(1.05);
       box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.4);
     }
-
     input[type="submit"]:active {
       transform: scale(0.95);
       box-shadow: 0px 2px 8px rgba(0, 170, 255, 0.2);
     }
-
-    /* Back link centered underline animation */
     .back-link {
       display: inline-block;
       position: relative;
@@ -95,7 +78,6 @@
       font-size: 0.9rem;
       padding-bottom: 3px;
     }
-
     .back-link::after {
       content: "";
       position: absolute;
@@ -107,14 +89,8 @@
       transform: translateX(-50%);
       transition: width 0.3s ease;
     }
-
-    .back-link:hover::after {
-      width: 100%;
-    }
-
-    .back-link:hover {
-      color: #00c3ff;
-    }
+    .back-link:hover::after { width: 100%; }
+    .back-link:hover { color: #00c3ff; }
   </style>
 </head>
 <body>
@@ -136,15 +112,37 @@
       <label for="password">Password:</label>
       <div style="display: flex; align-items: center;">
         <input id="password" type="password" name="password" placeholder="Enter password" required>
-        <button type="button" id="togglePassword" style="margin-left: 8px;">👁️</button>
+        <button type="button" id="togglePassword" style="margin-left: 8px; border: none; background: none; padding: 0;">
+          <img id="toggleIcon" src="assets/images/Invisible.png" alt="Toggle visibility" style="width: 25px; height: 25x; display: flex; align-items: center;">
+        </button>
       </div>
 
-      <input type="submit" onclick="return showForm('signup')" value="Sign Up">
+      <input type="submit" value="Sign Up">
     </form>
-    <script src="forms.js"></script>
 
     <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 
+  <script>
+    const passwordInput = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    togglePassword.addEventListener('click', () => {
+      console.log("Password toggle clicked");
+      console.log("Current type:", passwordInput.type);
+
+      const isPasswordVisible = passwordInput.type === 'text';
+      passwordInput.type = isPasswordVisible ? 'password' : 'text';
+
+      console.log("New type:", passwordInput.type);
+
+      toggleIcon.src = isPasswordVisible 
+        ? 'assets/images/Invisible.png' 
+        : 'assets/images/Visible.png';
+
+      console.log("Icon changed to:", toggleIcon.src);
+    });
+  </script>
 </body>
 </html>
