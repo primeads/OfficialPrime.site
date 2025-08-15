@@ -110,6 +110,27 @@
     .back-link:hover {
       color: #00c3ff;
     }
+
+    #toggleIcon {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+      filter: drop-shadow(0 0 3px #00aaff);
+    }
+
+    /* Hover effect */
+    #togglePassword:hover #toggleIcon {
+      transform: scale(1.2) rotate(10deg);
+      filter: drop-shadow(0 0 6px #00c3ff);
+    }
+
+    /* Click (active) effect */
+    #togglePassword:active #toggleIcon {
+      transform: scale(0.9) rotate(-10deg);
+      filter: drop-shadow(0 0 4px #008ecc);
+    }
   </style>
 </head>
 <body>
